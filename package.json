@@ -20,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon",
-    "dev":"nodemon"
+    "dev": "nodemon"
   },
   "nodemonConfig": {
     "watch": [
@@ -33,6 +33,7 @@
     "exec": "ts-node ./src/app.ts"
   },
   "dependencies": {
+    "dotenv": "16.4.7",
     "express": "^5.2.1"
   },
   "devDependencies": {
