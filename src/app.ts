@@ -5,8 +5,12 @@ import "dotenv/config";
 const app = express();
 const port = process.env.port;
 
+app.set("view engine", "ejs");
+// app.set("views", "./src/views");
+app.set("views", __dirname + "/views");
+
 app.get("/", (req, res) => {
-  res.send("Hello world! nodemon");
+  res.render("home");
 });
 
 app.get("/namanh", (req, res) => {
@@ -14,6 +18,5 @@ app.get("/namanh", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`running at ${port}`);
   console.log(`env port: ${process.env.port}`);
 });
