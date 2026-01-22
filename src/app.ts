@@ -12,6 +12,8 @@ app.set("views", __dirname + "/views");
 
 webRoutes(app);
 
+app.use(express.static("public"));
+
 app.listen(port, () => {
   console.log(`env port: ${process.env.port}`);
 });
