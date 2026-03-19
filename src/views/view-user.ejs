@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create a user</title>
+    <title>View a user</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -14,16 +14,19 @@
   </head>
   <body>
     <div style="width: 600px; margin: auto">
-      <h3>Create a user</h3>
+      <h3>
+        View detail of user id =
+        <%= id%>
+      </h3>
 
-      <form action="./handle-create-user" method="post">
+      <form action="./handle-update-user" method="post">
         <div class="mb-3">
           <label class="form-label">Name:</label>
           <input
             name="fullName"
             type="text"
             class="form-control"
-            placeholder="your name"
+            value="<%= user.name %>"
           />
         </div>
         <div class="mb-3">
@@ -32,15 +35,17 @@
             name="email"
             type="email"
             class="form-control"
-            placeholder="name@example.com"
+            value="<%= user.email %>"
           />
         </div>
         <div class="mb-3">
           <label class="form-label">Address:</label>
-          <textarea name="address" class="form-control" rows="2"></textarea>
+          <textarea name="address" class="form-control" rows="2">
+<%= user.address %></textarea
+          >
         </div>
         <div class="mb-3">
-          <button type="submit" class="btn btn-warning">Submit</button>
+          <button type="submit" class="btn btn-warning">Update</button>
         </div>
       </form>
     </div>

@@ -3,6 +3,7 @@ import {
   getAllUsers,
   handleCreateUser,
   handleDeleteUser,
+  getUserById,
 } from "../services/user.services";
 
 const getHomePage = async (req: Request, res: Response) => {
@@ -34,9 +35,18 @@ const postDeleteUserPage = async (req: Request, res: Response) => {
   return res.redirect("/");
 };
 
+const getViewUserPage = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const user = await getUserById(id);
+
+  return res.render("view-user", { id: id, user: user });
+};
+
 export {
   getHomePage,
   getCreateUserPage,
   postCreateUserPage,
   postDeleteUserPage,
+  getViewUserPage,
 };
