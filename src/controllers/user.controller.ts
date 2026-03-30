@@ -31,7 +31,7 @@ const postDeleteUserPage = async (req: Request, res: Response) => {
   // console.log(req.params.id);
   const { id } = req.params;
 
-  await handleDeleteUser(id);
+  const a = await handleDeleteUser(id);
 
   return res.redirect("/");
 };
