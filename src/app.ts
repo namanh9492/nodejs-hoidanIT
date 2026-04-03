@@ -3,6 +3,7 @@ import express from "express";
 import "dotenv/config";
 import path from "path";
 import webRoutes from "./routes/web";
+import initDatabase from "./config/seed";
 
 const app = express();
 const port = process.env.port;
@@ -21,6 +22,9 @@ app.use(express.static("public"));
 
 // config routes
 webRoutes(app);
+
+// seeding data
+initDatabase();
 
 app.listen(port, () => {
   console.log(`env port: ${process.env.port}`);

@@ -48,7 +48,7 @@ model Product {
   image      String? @db.VarChar(255)
   detailDesc String? @db.VarChar(255)
   shortDesc  String? @db.VarChar(255)
-  quantity   Int     @db.VarChar(50)
+  quantity   Int
   sold       String? @db.VarChar(255)
   factory    String? @db.VarChar(255)
   target     String? @db.VarChar(255)
